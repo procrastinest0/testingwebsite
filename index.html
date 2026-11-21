@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaushal's Corner</title>
+  <meta name="description" content="Who is Kaushal, what he does, and what this little corner of the internet is for." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>" />
+</head>
+<body>
+  <canvas id="doodle-layer" aria-hidden="true"></canvas>
+
+  <nav class="nav">
+    <a href="#top" class="logo">kaushal<span>.</span></a>
+    <div class="nav-links">
+      <a href="#who">who?</a>
+      <a href="#what">what?</a>
+      <a href="#why">why?</a>
+      <a href="#hello">say hi</a>
+    </div>
+    <button id="pen-toggle" class="pen-btn" title="Doodle on the page!" aria-pressed="false">✏️ doodle</button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header id="top" class="hero">
+    <div class="hero-text">
+      <p class="tiny wiggle">psst... you found me 👋</p>
+      <h1>Hi, I'm <span class="scribble">Kaushal</span>!</h1>
+      <p class="lead">
+        <!-- ✏️ EDIT: your one-line intro -->
+        I make things, break things, and doodle in the margins.
+        <br />I'm a <span id="typer" class="typer"></span><span class="caret">|</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#who" class="btn btn-pink">get to know me ↓</a>
+        <button id="confetti-btn" class="btn btn-yellow">press me 🎉</button>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <!-- Hand-drawn style avatar. Click it! -->
+      <svg id="avatar" viewBox="0 0 220 220" role="img" aria-label="A doodle of Kaushal waving">
+        <circle cx="110" cy="110" r="95" fill="var(--mint)" stroke="var(--ink)" stroke-width="4" class="sketch"/>
+        <path d="M62 92 Q70 40 110 38 Q150 40 158 92 Q150 70 110 66 Q72 68 62 92Z" fill="var(--ink)"/>
+        <ellipse cx="110" cy="112" rx="48" ry="54" fill="#FFE2C6" stroke="var(--ink)" stroke-width="4"/>
+        <path d="M66 96 Q74 58 110 56 Q146 58 154 96 Q140 76 110 74 Q82 76 66 96Z" fill="var(--ink)"/>
+        <g class="eyes">
+          <circle cx="92" cy="108" r="6" fill="var(--ink)"/>
+          <circle cx="128" cy="108" r="6" fill="var(--ink)"/>
+        </g>
+        <circle cx="80" cy="128" r="8" fill="var(--pink)" opacity=".8"/>
+        <circle cx="140" cy="128" r="8" fill="var(--pink)" opacity=".8"/>
+        <path id="mouth" d="M96 134 Q110 148 124 134" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+        <g class="wave-hand">
+          <path d="M175 150 Q190 120 186 96" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="186" cy="88" r="12" fill="#FFE2C6" stroke="var(--ink)" stroke-width="4"/>
+        </g>
+      </svg>
+      <p class="hint">(poke my face)</p>
+      <span class="sticker s1">★</span>
+      <span class="sticker s2">♥</span>
+      <span class="sticker s3">✿</span>
+    </div>
+  </header>
+
+  <!-- ============ WHO ============ -->
+  <section id="who" class="section">
+    <h2 class="section-title"><span class="hl hl-blue">Who is Kaushal?</span></h2>
+    <p class="section-sub">flip the sticky notes to find out ↻</p>
+
+    <div class="notes">
+      <!-- ✏️ EDIT: change the front/back text of each note -->
+      <div class="note yellow" tabindex="0">
+        <div class="note-inner">
+          <div class="note-front"><span class="big">🧠</span><h3>The basics</h3></div>
+          <div class="note-back">A curious human who likes figuring out how stuff works — and then making it a bit more fun.</div>
+        </div>
+      </div>
+      <div class="note pink" tabindex="0">
+        <div class="note-inner">
+          <div class="note-front"><span class="big">📍</span><h3>Where</h3></div>
+          <div class="note-back">Based somewhere on planet Earth, usually near good coffee and a decent wifi signal.</div>
+        </div>
+      </div>
+      <div class="note blue" tabindex="0">
+        <div class="note-inner">
+          <div class="note-front"><span class="big">💛</span><h3>Loves</h3></div>
+          <div class="note-back">Building side projects, learning new things, long walks, and well-named variables.</div>
+        </div>
+      </div>
+      <div class="note green" tabindex="0">
+        <div class="note-inner">
+          <div class="note-front"><span class="big">🙃</span><h3>Fun fact</h3></div>
+          <div class="note-back">Has more unfinished project ideas than finished ones. This website is one of the finished ones!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fact-box">
+      <p id="fact-text">Click the button for a random fact about me!</p>
+      <button id="fact-btn" class="btn btn-lilac">another fact 🎲</button>
+    </div>
+  </section>
+
+  <!-- ============ WHAT ============ -->
+  <section id="what" class="section">
+    <h2 class="section-title"><span class="hl hl-pink">What does he do?</span></h2>
+    <p class="section-sub">tap a card to see more</p>
+
+    <!-- ✏️ EDIT: your skills / work / hobbies -->
+    <div class="cards">
+      <article class="card c-peach">
+        <div class="card-icon">💻</div>
+        <h3>Builds stuff</h3>
+        <p>Websites, little tools and experiments — from idea doodle to live on the internet.</p>
+        <div class="more">Currently tinkering with: HTML, CSS, JavaScript &amp; whatever's shiny this week.</div>
+      </article>
+      <article class="card c-mint">
+        <div class="card-icon">🎨</div>
+        <h3>Designs things</h3>
+        <p>Likes bright colours, friendly layouts and making things feel human.</p>
+        <div class="more">Believes everything looks better with a hand-drawn squiggle.</div>
+      </article>
+      <article class="card c-sky">
+        <div class="card-icon">📚</div>
+        <h3>Keeps learning</h3>
+        <p>Always reading, trying, failing, and trying again.</p>
+        <div class="more">Next up on the list: something completely new. Ask me what!</div>
+      </article>
+      <article class="card c-lilac">
+        <div class="card-icon">🤝</div>
+        <h3>Helps people</h3>
+        <p>Happy to chat, collaborate, or help you get your own idea off the ground.</p>
+        <div class="more">Got a project? Scroll down and say hi.</div>
+      </article>
+    </div>
+
+    <h3 class="skills-title">things I'm into <small>(hover them!)</small></h3>
+    <ul class="skills">
+      <li>web dev</li><li>design</li><li>problem solving</li><li>doodling</li>
+      <li>side projects</li><li>coffee ☕</li><li>music 🎧</li><li>learning</li>
+    </ul>
+  </section>
+
+  <!-- ============ WHY ============ -->
+  <section id="why" class="section">
+    <h2 class="section-title"><span class="hl hl-yellow">What is this website for?</span></h2>
+    <div class="why-wrap">
+      <div class="paper">
+        <!-- ✏️ EDIT: the purpose of your site -->
+        <p>Good question! This little corner of the internet is:</p>
+        <ol class="checklist">
+          <li><label><input type="checkbox" /> <span>A place where you can get to know me</span></label></li>
+          <li><label><input type="checkbox" /> <span>A home for my projects, notes &amp; experiments</span></label></li>
+          <li><label><input type="checkbox" /> <span>My playground for learning web stuff</span></label></li>
+          <li><label><input type="checkbox" /> <span>An easy way for you to reach me</span></label></li>
+        </ol>
+        <p class="check-msg" id="check-msg">tick all the boxes ✔</p>
+      </div>
+      <div class="arrow-doodle" aria-hidden="true">
+        <svg viewBox="0 0 160 120"><path d="M10 100 C 40 20, 100 10, 140 40" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" class="draw"/><path d="M122 28 L142 41 L126 58" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="draw"/></svg>
+        <span>it's a work in progress, just like me!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HELLO ============ -->
+  <section id="hello" class="section">
+    <h2 class="section-title"><span class="hl hl-green">Say hi!</span></h2>
+    <p class="section-sub">I don't bite. Pick your favourite way:</p>
+    <!-- ✏️ EDIT: put your real links here -->
+    <div class="contacts">
+      <a class="contact c-pink" href="https://github.com/procrastinest0" target="_blank" rel="noopener">🐙 GitHub</a>
+      <a class="contact c-blue" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+      <a class="contact c-yellow" href="mailto:hello@example.com">✉️ Email</a>
+      <a class="contact c-green" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+    </div>
+
+    <div class="guestbook">
+      <h3>leave a doodle-note ✍️ <small>(saved only in your browser)</small></h3>
+      <form id="gb-form">
+        <input id="gb-input" maxlength="80" placeholder="write something nice..." autocomplete="off" />
+        <button class="btn btn-pink" type="submit">stick it!</button>
+      </form>
+      <div id="gb-wall" class="gb-wall"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>hand-made with ✏️, 🎨 and a lot of ☕ by Kaushal · <span id="year"></span></p>
+    <p class="tiny">psst — try the ✏️ doodle button up top, or type “hello” anywhere.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
